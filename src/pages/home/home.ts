@@ -7,6 +7,8 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 	templateUrl: 'home.html'
 })
 export class HomePage {
+	base64Image: string;
+
 	constructor(public navCtrl: NavController, public cameraPlugin: Camera) {}
 
 	takePicture(): void {
@@ -21,7 +23,7 @@ export class HomePage {
 			(imageData) => {
 				// imageData is either a base64 encoded string or a file URI
 				// If it's base64:
-				let base64Image = 'data:image/jpeg;base64,' + imageData;
+				this.base64Image = 'data:image/jpeg;base64,' + imageData;
 			},
 			(err) => {
 				// Handle error

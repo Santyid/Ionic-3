@@ -1,18 +1,36 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Profile
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p> 
 
-  <button ion-button (click)="takePicture()">Default</button>
+    <h1>
+        Welcome to profile.
+    </h1>
 
-  
+    <ion-item>
+        <ion-thumbnail item-start>
+            <img src="assets/imgs/ane.png">
+        </ion-thumbnail>
+        <h2>Santiago Idarraga</h2>
+        <p>Heyyyyyyy! Hi..</p>
+    </ion-item>
+
+    <ion-card>
+        <ion-card-content>
+            <ion-icon name="contact">
+                <img [src]="base64Image"
+                     *ngIf="base64Image" />
+            </ion-icon>
+        </ion-card-content>
+    </ion-card>
+
+    <button ion-button
+            (click)="takePicture()">Change Image</button>
+
+
 </ion-content>
